@@ -1,0 +1,52 @@
+{
+  "name": "@local/work-v2",
+  "version": "2.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Work v2.0.1 — Multi-Repo Git Vault, E2EE Chats, Saul Player & Floating Studio HUD",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js tests/*.test.mjs",
+    "build": "node scripts/build-ui.mjs",
+    "verify": "node scripts/verify-package.mjs && node scripts/verify-v4.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "locale",
+    "icon.svg",
+    "scripts",
+    "ui",
+    "lib",
+    "install.ps1",
+    "install.cmd"
+  ],
+  "dependencies": {
+    "archiver": "^8.0.0",
+    "ignore": "^7.0.14"
+  }
+}

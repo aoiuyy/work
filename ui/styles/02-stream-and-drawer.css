@@ -1,0 +1,275 @@
+        /* Center Timeline */
+        .wk-center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          background: var(--wk-canvas);
+          min-width: 0;
+          overflow: hidden;
+          position: relative;
+        }
+        .wk-center.drop-active {
+          outline: 2px dashed var(--wk-text);
+          outline-offset: -8px;
+          background: rgba(56, 189, 248, 0.04);
+        }
+        .wk-center-header {
+          height: 46px;
+          padding: 0 16px;
+          background: var(--wk-surface);
+          border-bottom: 1px solid var(--wk-subtle);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-shrink: 0;
+        }
+        .wk-timeline-filter {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 6px 16px;
+          background: var(--wk-canvas);
+          border-bottom: 1px solid var(--wk-subtle);
+          flex-shrink: 0;
+        }
+        .wk-filter-btn {
+          font-size: 11px;
+          font-weight: 500;
+          padding: 3px 8px;
+          border-radius: 4px;
+          background: transparent;
+          color: var(--wk-secondary);
+          border: 1px solid transparent;
+          cursor: pointer;
+          transition: color 0.15s ease, background-color 0.15s ease;
+        }
+        .wk-filter-btn:hover { color: var(--wk-secondary); background: var(--wk-elevated); }
+        .wk-filter-btn.active {
+          color: var(--wk-text);
+          background: rgba(255,255,255,.06);
+          border-color: rgba(255,255,255,.14);
+          font-weight: 600;
+        }
+        .wk-stream {
+          flex: 1;
+          overflow-y: auto;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .wk-msg {
+          display: flex;
+          gap: 10px;
+          max-width: 85%;
+          align-items: flex-start;
+        }
+        .wk-msg.mine { align-self: flex-start; }
+        .wk-msg.theirs { align-self: flex-start; }
+        .wk-msg-avatar {
+          width: 32px;
+          height: 32px;
+          border-radius: 6px;
+          object-fit: cover;
+          background: var(--wk-subtle);
+          flex-shrink: 0;
+        }
+        .wk-msg-avatar-initials {
+          width: 32px;
+          height: 32px;
+          border-radius: 6px;
+          background: var(--wk-subtle);
+          color: var(--wk-secondary);
+          font-size: 12px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .wk-msg-content {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+          min-width: 0;
+        }
+        .wk-msg-meta {
+          font-size: 11px;
+          color: var(--wk-secondary);
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+        }
+        .wk-msg-sender {
+          font-weight: 600;
+          color: var(--wk-text);
+        }
+        .wk-msg-sender.mine { color: var(--wk-text); }
+        .wk-msg-time {
+          font-size: 10px;
+          color: var(--wk-secondary);
+        }
+        .wk-msg-text {
+          font-size: 13px;
+          line-height: 1.5;
+          color: var(--wk-text);
+          word-break: break-word;
+          user-select: text;
+        }
+
+        /* Repo Card (Elon-Mars / Gitingest Style) */
+        .wk-repo-card {
+          width: 100%;
+          max-width: 580px;
+          background: var(--wk-surface);
+          border: 1px solid var(--wk-subtle);
+          border-left: 1px solid var(--wk-border-strong);
+          border-radius: 8px;
+          padding: 12px 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+          transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .wk-repo-card:hover {
+          border-color: var(--wk-border-strong);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        .wk-repo-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+        }
+        .wk-repo-title-wrap {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--wk-text);
+          font-family: ui-monospace, monospace;
+        }
+        .wk-repo-desc {
+          font-size: 11px;
+          color: var(--wk-secondary);
+          line-height: 1.4;
+        }
+        .wk-repo-actions {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-top: 4px;
+          padding-top: 8px;
+          border-top: 1px solid var(--wk-subtle);
+        }
+
+        /* Composer */
+        .wk-composer {
+          padding: 10px 16px;
+          background: var(--wk-surface);
+          border-top: 1px solid var(--wk-subtle);
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex-shrink: 0;
+        }
+
+        /* Buttons (Minimal & Professional) */
+        .wk-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          padding: 5px 11px;
+          border-radius: 5px;
+          font-size: 11px;
+          font-weight: 600;
+          cursor: pointer;
+          border: 1px solid transparent;
+          outline: none;
+          transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+          white-space: nowrap;
+        }
+        .wk-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .wk-btn-primary { background: var(--wk-subtle); color: #ffffff; }
+        .wk-btn-primary:hover:not(:disabled) { background: var(--wk-elevated); }
+        .wk-btn-secondary { background: var(--wk-subtle); color: var(--wk-text); border-color: var(--wk-border-strong); }
+        .wk-btn-secondary:hover:not(:disabled) { background: var(--wk-border-strong); }
+        .wk-btn-danger { background: #dc2626; color: #ffffff; }
+        .wk-btn-danger:hover:not(:disabled) { background: #b91c1c; }
+        .wk-btn-subtle { background: transparent; color: var(--wk-secondary); }
+        .wk-btn-subtle:hover:not(:disabled) { background: var(--wk-subtle); color: var(--wk-text); }
+        .wk-btn-subtle.active { color: var(--wk-text); background: rgba(255,255,255,.06); }
+        .wk-btn-sm { padding: 3px 7px; font-size: 10px; }
+
+        /* Unified Diff Inspector Drawer */
+        .wk-drawer {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 500px;
+          background: var(--wk-surface);
+          border-left: 1px solid var(--wk-subtle);
+          box-shadow: -8px 0 32px rgba(0,0,0,0.7);
+          z-index: 100000;
+          display: flex;
+          flex-direction: column;
+        }
+        .wk-drawer-head {
+          padding: 12px 16px;
+          border-bottom: 1px solid var(--wk-subtle);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .wk-drawer-body {
+          flex: 1;
+          padding: 14px;
+          overflow-y: auto;
+          font-family: ui-monospace, monospace;
+          font-size: 11px;
+          color: var(--wk-text);
+          white-space: pre-wrap;
+          user-select: text;
+        }
+        .wk-diff-line-add { color: #34d399; background: rgba(16, 185, 129, 0.08); display: block; }
+        .wk-diff-line-del { color: #f87171; background: rgba(239, 68, 68, 0.08); display: block; }
+        .wk-diff-line-hunk { color: var(--wk-text); display: block; margin-top: 6px; }
+
+        /* Empty State */
+        .wk-empty-state {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          color: var(--wk-secondary);
+          text-align: center;
+          padding: 32px;
+        }
+        .wk-empty-title { font-size: 14px; font-weight: 700; color: var(--wk-secondary); }
+        .wk-empty-sub { font-size: 12px; color: var(--wk-secondary); max-width: 420px; line-height: 1.5; }
+        .wk-global-panel { pointer-events: auto; position: fixed; container-type: inline-size; z-index: 100001; background: var(--wk-canvas); border: 1px solid var(--wk-border-strong); border-radius: 12px; overflow: hidden; box-shadow: 0 18px 50px rgba(0,0,0,.45); color: var(--wk-text); }
+        .wk-global-panel[hidden] { display: none; }
+        .wk-close-global { position: absolute; right: 12px; top: 48px; z-index: 30; }
+        .wk-global-panel .wk-app { padding-top: 0; }
+        .wk-bubble { pointer-events: auto; position: fixed; width: 43px; height: 43px; border-radius: 50%; border: 1px solid var(--wk-text); background: var(--wk-elevated); color: var(--wk-text); z-index: 100002; touch-action: none; cursor: grab; display: grid; place-items: center; box-shadow: 0 5px 18px rgba(0,0,0,.4); }
+        .wk-work-tabs { display: flex; gap: 8px; padding: 6px 12px; border-bottom: 1px solid var(--wk-subtle); }
+        .wk-work-tabs [aria-pressed=true], .wk-channel.active { background: var(--wk-subtle); color: var(--wk-text); }
+        .wk-channel { display: block; width: 100%; text-align: left; padding: 7px; color: var(--wk-text); background: transparent; border: 0; border-radius: 4px; cursor: pointer; }
+        .wk-inline-diff { overflow: auto; max-height: 300px; margin: 8px 0; font: 12px/1.5 ui-monospace,monospace; white-space: pre; user-select: text; }
+        .wk-mini-audio-strip { height: 42px; min-height: 42px; max-height: 42px; padding: 4px 6px; gap: 3px; box-sizing: border-box; border-radius: 21px; }
+        .wk-capsule-title { background: transparent; border: 0; color: inherit; padding: 0; cursor: pointer; flex: 1; min-width: 38px; }
+        .wk-capsule-seek { width: 42px; min-width: 20px; }
+        .wk-capsule-volume { width: 28px; }
+        .wk-mini-audio-strip .wk-btn { padding: 4px; min-height: 28px; }
+        .wk-app input[type=range] { accent-color: var(--wk-text); }
+        .wk-app :focus-visible, .wk-bubble:focus-visible, .wk-close-global:focus-visible { outline: 2px solid var(--wk-text); outline-offset: 2px; }
+        .wk-app ::selection { background: var(--wk-subtle); color: var(--wk-text); }
+        .wk-app input { caret-color: var(--wk-text); }
+        .wk-app .wk-msg-text { user-select: text; }

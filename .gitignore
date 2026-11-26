@@ -1,0 +1,27 @@
+# Dependencies & runtime artifacts
+node_modules/
+data/
+temp/
+.work-update-*
+.work-extract-stage-*
+.env
+.env.*
+!.env.example
+*.tmp
+*.bak
+
+# Local credentials & Windows DPAPI vaults
+.token-*
+*.dpapi
+
+# Local-only tooling & internal workstation docs
+crates/
+AGENTS.md
+docs/WORK_CODE_MAP.md
+
+# OS / Editor files
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+*.swp

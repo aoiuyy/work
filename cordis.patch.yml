@@ -1,0 +1,7 @@
+- insert:
+    - id: work
+      name: '@local/work-v2'
+      config:
+        vaultRepo: 'dsh-work-vault'
+        machineName: 'Workstation'
+        defaultParent: ''
